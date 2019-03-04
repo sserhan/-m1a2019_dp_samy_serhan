@@ -5,7 +5,6 @@ public final class Client {
     private static ProductA prodA;
     private static ProductB prodB;
 
-
     public Client(){
         prodA = new ProductA();
     }

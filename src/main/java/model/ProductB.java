@@ -9,15 +9,15 @@ public final class ProductB extends AbstractProduct {
         ProductFactory.registryProduct("ProductB",new ProductB());
     }
 
-    protected AbstractProduct createProduct() {
+    public AbstractProduct createProduct() {
         return new ProductB();
     }
 
-    public void doIt(){
+    private static void doIt(){
         System.out.println("I ’m a ProductB , doing it");
     }
 
     public void foo() {
-        this.doIt();
+        doIt();
     }
 }

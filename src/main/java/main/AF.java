@@ -1,8 +1,9 @@
-package model;
+package main;
 
 import Factory.ProductFactory;
+import model.Client;
 
-public class AF {
+public final class AF {
     static {
         try{
             Class.forName("model.ProductA");
