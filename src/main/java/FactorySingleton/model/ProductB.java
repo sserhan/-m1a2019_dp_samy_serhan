@@ -1,8 +1,7 @@
-package model;
+package FactorySingleton.model;
 
-import Factory.ProductFactory;
-import abstrac.AbstractProduct;
-import interfac.Product;
+import FactorySingleton.Factory.ProductFactory;
+import FactorySingleton.abstractclass.AbstractProduct;
 
 public final class ProductB extends AbstractProduct {
     static{
