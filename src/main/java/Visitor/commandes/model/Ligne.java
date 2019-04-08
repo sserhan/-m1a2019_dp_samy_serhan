@@ -1,7 +1,7 @@
-package Visitor.model;
+package Visitor.commandes.model;
 
-import Visitor.contrat.IVisitable;
-import Visitor.contrat.IVisitor;
+import Visitor.commandes.contrat.IVisitable;
+import Visitor.commandes.contrat.IVisitor;
 
 public class Ligne implements IVisitable {
     private String name;
@@ -20,6 +20,6 @@ public class Ligne implements IVisitable {
 
     @Override
     public String toString() {
-        return "Element de type Ligne";
+        return "Ligne : " + getName();
     }
 }

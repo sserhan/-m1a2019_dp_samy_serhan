@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="DP" />
+        <module name="m1a2019_dp_samy_serhan" />
       </profile>
     </annotationProcessing>
   </component>

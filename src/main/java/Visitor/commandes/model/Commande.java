@@ -1,7 +1,7 @@
-package Visitor.model;
+package Visitor.commandes.model;
 
-import Visitor.contrat.IVisitable;
-import Visitor.contrat.IVisitor;
+import Visitor.commandes.contrat.IVisitable;
+import Visitor.commandes.contrat.IVisitor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +20,16 @@ public class Commande implements IVisitable {
     }
 
     public void accept(IVisitor visitor) {
+        ligneList.forEach(l -> l.accept(visitor));
         visitor.visit(this);
     }
 
     public String getName() {
         return name;
+    }
+
+    public List<Ligne> getLigneList() {
+        return ligneList;
     }
 
     public void addLigne(Ligne l){
@@ -33,6 +38,6 @@ public class Commande implements IVisitable {
 
     @Override
     public String toString() {
-        return "Element de type Commande";
+        return "Commande : " + getName();
     }
 }

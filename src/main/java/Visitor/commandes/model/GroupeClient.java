@@ -1,10 +1,11 @@
-package Visitor.model;
+package Visitor.commandes.model;
 
-import Visitor.contrat.IVisitable;
-import Visitor.contrat.IVisitor;
+import Visitor.commandes.contrat.IVisitable;
+import Visitor.commandes.contrat.IVisitor;
 
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class GroupeClient implements IVisitable {
@@ -17,8 +18,12 @@ public class GroupeClient implements IVisitable {
 
     public void accept(IVisitor visitor) {
         for(Client c : clientList){
-            visitor.visit(c);
+            c.accept(visitor);
         }
+    }
+
+    public Iterator<Client> iterator(){
+        return this.clientList.iterator();
     }
 
     public String getName() {

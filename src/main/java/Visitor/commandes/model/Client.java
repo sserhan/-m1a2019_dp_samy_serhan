@@ -1,7 +1,7 @@
-package Visitor.model;
+package Visitor.commandes.model;
 
-import Visitor.contrat.IVisitable;
-import Visitor.contrat.IVisitor;
+import Visitor.commandes.contrat.IVisitable;
+import Visitor.commandes.contrat.IVisitor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +15,7 @@ public class Client implements IVisitable {
     }
 
     public void accept(IVisitor visitor) {
+        commandeList.forEach(c -> c.accept(visitor));
         visitor.visit(this);
     }
 
@@ -26,8 +27,12 @@ public class Client implements IVisitable {
         commandeList.add(c);
     }
 
+    public List<Commande> getCommandeList() {
+        return commandeList;
+    }
+
     @Override
     public String toString() {
-        return "Element de type Client";
+        return "Client : " + this.getName();
     }
 }
