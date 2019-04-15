@@ -6,7 +6,7 @@ import Visitor.commandes.contrat.IVisitor;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Client implements IVisitable {
+public final class Client implements IVisitable {
     private String name;
     private List<Commande> commandeList = new ArrayList<Commande>();
 

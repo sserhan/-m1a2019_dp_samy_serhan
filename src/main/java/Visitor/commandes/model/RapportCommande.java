@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class RapportCommande implements IVisitor {
+public final class RapportCommande implements IVisitor {
     private List<Client> clientVisite = new ArrayList<>();
 
     public void visit(Client c) {

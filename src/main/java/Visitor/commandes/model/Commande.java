@@ -6,7 +6,7 @@ import Visitor.commandes.contrat.IVisitor;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Commande implements IVisitable {
+public final class Commande implements IVisitable {
     private String name;
     private List<Ligne> ligneList = new ArrayList<Ligne>();
 

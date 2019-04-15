@@ -3,7 +3,7 @@ package Visitor.commandes.model;
 import Visitor.commandes.contrat.IVisitable;
 import Visitor.commandes.contrat.IVisitor;
 
-public class Ligne implements IVisitable {
+public final class Ligne implements IVisitable {
     private String name;
 
     public Ligne(String name) {
