@@ -3,6 +3,9 @@ package Visitor.tree.modele;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Implémentation de la classe noeud
+ */
 public final class Node extends Composant {
 
     private Set composants=new HashSet();

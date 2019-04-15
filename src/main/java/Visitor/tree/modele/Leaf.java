@@ -2,6 +2,9 @@ package Visitor.tree.modele;
 
 import java.util.Set;
 
+/**
+ * Implémentation de la classe feuille
+ */
 public final class Leaf extends Composant {
     public Leaf(int value) {
         super(value);

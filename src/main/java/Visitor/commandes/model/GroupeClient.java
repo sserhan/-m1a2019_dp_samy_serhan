@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * Implémentation du visitable GroupeClient qui est composé d'une liste de Clients.
+ */
 public final class GroupeClient implements IVisitable {
     private List<Client> clientList = new ArrayList<Client>();
     private String name;

@@ -5,6 +5,9 @@ import Visitor.tree.contrat.ComposantIntf;
 import java.util.Objects;
 import java.util.Set;
 
+/**
+ * Classe Abstraite d'un composant pour contrstruire nos arbres
+ */
 public abstract class Composant implements ComposantIntf {
 
     int value;

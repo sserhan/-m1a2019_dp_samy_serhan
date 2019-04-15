@@ -4,6 +4,10 @@ import Visitor.commandes.model.Client;
 import Visitor.commandes.model.Commande;
 import Visitor.commandes.model.Ligne;
 
+/**
+ * Interface du visiteur
+ */
+
 public interface IVisitor {
     void visit(Client c);
     void visit(Commande o);

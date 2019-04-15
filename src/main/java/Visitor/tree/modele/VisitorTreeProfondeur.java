@@ -6,6 +6,9 @@ import Visitor.tree.contrat.ITreeVisitor;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Implémentation d'un visiteur d'arbre qui parcourt en profondeur
+ */
 public class VisitorTreeProfondeur implements ITreeVisitor {
 
     @Override
@@ -23,5 +26,18 @@ public class VisitorTreeProfondeur implements ITreeVisitor {
             }
         }
         return comp;
+    }
+
+    @Override
+    public void visitPartition(ComposantIntf t, List<ComposantIntf> trees, List<ComposantIntf> pairs, List<ComposantIntf> impairs) {
+        if (t.getValue() % 2 == 0) {
+            pairs.add(t);
+        } else {
+            impairs.add(t);
+        }
+        if(t.isNode()){
+            trees.forEach(composant -> visitPartition(composant,
+                    composant.isNode()?new ArrayList<>(composant.getChildren()):null,pairs,impairs));
+        }
     }
 }

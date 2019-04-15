@@ -7,7 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Implémentation d'un visiteur d'arbre qui parcourt en largeur
+ */
 public final class VisitorTreeLargeur implements ITreeVisitor {
+
+    private boolean first = false;
 
     @Override
     public ComposantIntf visitTree(ComposantIntf t, List<ComposantIntf> trees, int i) {
@@ -29,4 +34,28 @@ public final class VisitorTreeLargeur implements ITreeVisitor {
         }
         return comp;
     }
+
+    @Override
+    public void visitPartition(ComposantIntf t, List<ComposantIntf> trees, List<ComposantIntf> pairs, List<ComposantIntf> impairs) {
+        if(pairs.isEmpty() && impairs.isEmpty()){
+            if (t.getValue() % 2 == 0) {
+                pairs.add(t);
+            } else {
+                impairs.add(t);
+            }
+            first = true;
+        }
+        if(t.isNode()) {
+            t.getChildren().forEach(c -> {
+                if (c.getValue() % 2 == 0)
+                    pairs.add(c);
+                else
+                    impairs.add(c);
+            });
+            t.getChildren().forEach(c -> visitPartition(c,
+                    c.isNode()?new ArrayList<>(c.getChildren()):null,pairs,impairs));
+        }
+    }
 }
+
+

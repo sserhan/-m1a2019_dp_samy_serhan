@@ -3,6 +3,9 @@ package Visitor.commandes.model;
 import Visitor.commandes.contrat.IVisitable;
 import Visitor.commandes.contrat.IVisitor;
 
+/**
+ * Implémentation du Visitable Ligne
+ */
 public final class Ligne implements IVisitable {
     private String name;
 

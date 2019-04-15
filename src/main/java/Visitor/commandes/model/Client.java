@@ -6,6 +6,10 @@ import Visitor.commandes.contrat.IVisitor;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Implémentation du visitable client
+ */
+
 public final class Client implements IVisitable {
     private String name;
     private List<Commande> commandeList = new ArrayList<Commande>();

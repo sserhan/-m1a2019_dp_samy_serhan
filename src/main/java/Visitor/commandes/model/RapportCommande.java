@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Implémentation du Visiteur Rapport Commande.
+ */
 public final class RapportCommande implements IVisitor {
     private List<Client> clientVisite = new ArrayList<>();
 

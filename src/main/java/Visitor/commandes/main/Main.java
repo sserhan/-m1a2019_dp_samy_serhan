@@ -5,6 +5,10 @@ import Visitor.commandes.model.*;
 
 import java.util.Iterator;
 
+/**
+ * classe main va créer un groupe de client auxquels on associe des commandes
+ * Puis création d'un rapport de Commande qui va parcourir le groupe de client
+ */
 public class Main {
     public static void main (String [] args){
         Ligne ligne = new Ligne("Ligne 1");
