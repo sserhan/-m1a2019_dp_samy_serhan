@@ -1,5 +1,6 @@
 package Visitor.tree.main;
 
+import Visitor.tree.contrat.ComposantIntf;
 import Visitor.tree.contrat.ITreeVisitor;
 import Visitor.tree.modele.*;
 
@@ -10,10 +11,10 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main (String [] args){
-        Composant Tree = new Node(10);
+        ComposantIntf Tree = new Node(10);
         Tree.addNode(new Node(5));
         Tree.addNode(new Node(15));
-        List<Composant> children = new ArrayList<>(Tree.getChildren());
+        List<ComposantIntf> children = new ArrayList<>(Tree.getChildren());
         children.get(0).addNode(new Leaf(2));
         children.get(0).addNode(new Leaf(4));
         children.get(1).addNode(new Leaf(11));
@@ -23,7 +24,7 @@ public class Main {
         ITreeVisitor visitorL = new VisitorTreeLargeur();
 
         System.out.println("PARCOURS EN PROFONDEUR : ");
-        Composant profondeur = visitorP.visitTree(Tree, new ArrayList<>(Tree.getChildren()), 10);
+        ComposantIntf profondeur = visitorP.visitTree(Tree, new ArrayList<>(Tree.getChildren()), 17);
         if (profondeur == null) {
             System.out.println("Composant non trouvé");
         } else {
@@ -31,7 +32,7 @@ public class Main {
         }
 
         System.out.println("PARCOURS EN LARGEUR : ");
-        Composant largeur = visitorL.visitTree(Tree, new ArrayList<>(Tree.getChildren()), 15);
+        ComposantIntf largeur = visitorL.visitTree(Tree, new ArrayList<>(Tree.getChildren()), 17);
         if(largeur == null){
             System.out.println("Composant non trouvé");
         } else {
